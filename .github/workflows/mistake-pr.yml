@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   detect:
-    if: github.repository == 'Pedro-Pathing/Quickstart'
     runs-on: ubuntu-latest
     steps:
       - name: Detect mistake PR

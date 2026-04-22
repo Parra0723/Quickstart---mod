@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   reopen:
-    if: github.repository == 'Pedro-Pathing/Quickstart'
     runs-on: ubuntu-latest
     steps:
       - name: Handle /not-a-mistake
