@@ -118,25 +118,25 @@ public class Silex extends OpMode {
         // Cuchara 1
         if (t < 2) {
             cuchara1.setPosition(C1_MIN);
-        } else if (t < 2.5) {
+        } else if (t < 3) {
             cuchara1.setPosition(C1_MAX);
         } else {
             cuchara1.setPosition(C1_MIN);
         }
 
         // Cuchara 2
-        if (t < 3) {
+        if (t < 3.5) {
             cuchara2.setPosition(C2_MIN);
-        } else if (t < 3.5) {
+        } else if (t < 4.5) {
             cuchara2.setPosition(1);
         } else {
             cuchara2.setPosition(C2_MIN);
         }
 
         // Cuchara 3 invertida
-        if (t < 4) {
+        if (t < 5) {
             cuchara3.setPosition(C3_MAX);
-        } else if (t < 4.3) {
+        } else if (t < 6) {
             cuchara3.setPosition(C3_MIN);
         } else {
             cuchara3.setPosition(C3_MAX);
@@ -173,7 +173,7 @@ public class Silex extends OpMode {
                     double t = pathTimer.getElapsedTimeSeconds();
                     dispararTresCucharas(t);
 
-                    if (t > 5.0) {
+                    if (t > 7.0) {
                         follower.followPath(grabPickup1, true);
                         setPathState(2);
                     }
