@@ -341,7 +341,7 @@ public class SilexTeleop extends LinearOpMode {
             // Ajuste manual fino
             boolean juanSubir = gamepad1.right_trigger > 0.1;
             boolean juanBajar = gamepad1.left_trigger > 0.1;
-            double velocidadJuan = 1;
+            double velocidadJuan = 0.2;
 
             if (juanSubir) {
                 juanActualPos += velocidadJuan;

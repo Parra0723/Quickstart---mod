@@ -56,7 +56,7 @@ public class Silex extends OpMode {
     private int pathState;
 
     private final Pose startPose = new Pose(28.5, 128, Math.toRadians(180));
-    private final Pose scorePose = new Pose(60, 85, Math.toRadians(135));
+    private final Pose scorePose = new Pose(70, 85, Math.toRadians(135));
     private final Pose pickup1Pose = new Pose(22, 84, Math.toRadians(197));
     private final Pose pickup2Pose = new Pose(22, 60, Math.toRadians(180));
     private final Pose pickup3Pose = new Pose(22, 36, Math.toRadians(185));
@@ -118,25 +118,25 @@ public class Silex extends OpMode {
         // Cuchara 1
         if (t < 2) {
             cuchara1.setPosition(C1_MIN);
-        } else if (t < 3) {
+        } else if (t < 2.5) {
             cuchara1.setPosition(C1_MAX);
         } else {
             cuchara1.setPosition(C1_MIN);
         }
 
         // Cuchara 2
-        if (t < 3.5) {
+        if (t < 3) {
             cuchara2.setPosition(C2_MIN);
-        } else if (t < 4.5) {
+        } else if (t < 3.5) {
             cuchara2.setPosition(1);
         } else {
             cuchara2.setPosition(C2_MIN);
         }
 
         // Cuchara 3 invertida
-        if (t < 5) {
+        if (t < 4) {
             cuchara3.setPosition(C3_MAX);
-        } else if (t < 6) {
+        } else if (t < 4.5) {
             cuchara3.setPosition(C3_MIN);
         } else {
             cuchara3.setPosition(C3_MAX);
@@ -154,12 +154,13 @@ public class Silex extends OpMode {
     }
 
     public void autonomousPathUpdate() {
+        System.out.println("trigger");
         switch (pathState) {
             case 0:
-                Juan.setPosition(0.5);
+                Juan.setPosition(0.4);
 
-                flywheel.setVelocity(2000);
-                flywheelD.setVelocity(2000);
+                flywheel.setVelocity(1500);
+                flywheelD.setVelocity(1500);
 
                 resetCucharas();
 
@@ -172,6 +173,11 @@ public class Silex extends OpMode {
 
                     double t = pathTimer.getElapsedTimeSeconds();
                     dispararTresCucharas(t);
+
+                    if (t > 5 ) {
+
+                        Intake.setPower(1);
+                    }
 
                     if (t > 7.0) {
                         follower.followPath(grabPickup1, true);
