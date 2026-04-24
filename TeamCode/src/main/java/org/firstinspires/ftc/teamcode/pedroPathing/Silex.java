@@ -156,7 +156,7 @@ public class Silex extends OpMode {
     public void autonomousPathUpdate() {
         System.out.println("trigger");
         switch (pathState) {
-            case 0:
+            case 0: {
                 Juan.setPosition(0.4);
 
                 flywheel.setVelocity(1500);
@@ -167,8 +167,8 @@ public class Silex extends OpMode {
                 follower.followPath(scorePreload);
                 setPathState(1);
                 break;
-
-            case 1:
+            }
+            case 1:{
                 if (!follower.isBusy()) {
 
                     double t = pathTimer.getElapsedTimeSeconds();
@@ -185,8 +185,8 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 2:
+            }
+            case 2: {
                 if (!follower.isBusy()) {
                     Intake.setPower(1);
 
@@ -197,8 +197,8 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 3:
+            }
+            case 3:{
                 if (!follower.isBusy()) {
                     Intake.setPower(0);
 
@@ -211,8 +211,8 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 4:
+            }
+            case 4:{
                 if (!follower.isBusy()) {
                     Intake.setPower(1);
 
@@ -223,8 +223,8 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 5:
+            }
+            case 5:{
                 if (!follower.isBusy()) {
                     Intake.setPower(0);
 
@@ -237,20 +237,20 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 6:
+            }
+            case 6:{
                 if (!follower.isBusy()) {
-                    Intake.setPower(1);
+                Intake.setPower(1);
 
-                    double t = pathTimer.getElapsedTimeSeconds();
-                    if (t > 1.5) {
-                        follower.followPath(scorePickup3, true);
-                        setPathState(7);
-                    }
+                double t = pathTimer.getElapsedTimeSeconds();
+                if (t > 1.5) {
+                    follower.followPath(scorePickup3, true);
+                    setPathState(7);
                 }
+            }
                 break;
-
-            case 7:
+            }
+            case 7:{
                 if (!follower.isBusy()) {
                     Intake.setPower(0);
 
@@ -263,14 +263,15 @@ public class Silex extends OpMode {
                     }
                 }
                 break;
-
-            case 8:
+            }
+            case 8: {
                 if (!follower.isBusy()) {
                     resetCucharas();
                     Intake.setPower(0);
                     setPathState(-1);
                 }
                 break;
+            }
         }
     }
 
