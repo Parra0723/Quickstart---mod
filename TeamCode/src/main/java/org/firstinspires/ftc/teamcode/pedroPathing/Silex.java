@@ -381,4 +381,23 @@ public class Silex extends OpMode {
         flywheel.setPower(0);
         flywheelD.setPower(0);
     }
+
+    public void ejecutarSecuenciaScore(){
+        if (!follower.isBusy()) {
+
+            double t = pathTimer.getElapsedTimeSeconds();
+            dispararTresCucharas(t);
+
+            if (t > 5 ) {
+
+                Intake.setPower(1);
+            }
+
+            if (t > 7.0) {
+                follower.followPath(grabPickup1, true);
+                setPathState(2);
+            }
+        }
+    }
+
 }
