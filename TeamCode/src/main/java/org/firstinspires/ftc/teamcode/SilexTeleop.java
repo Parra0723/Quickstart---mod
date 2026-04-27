@@ -202,7 +202,7 @@ public class SilexTeleop extends LinearOpMode {
 
             // =========================== TOGGLES ===========================
             // Auto-Apunte (Botón X)
-            boolean autoAimButton = gamepad1.right_bumper;
+            boolean autoAimButton = gamepad2.right_bumper;
             if (autoAimButton && !autoAimButtonPrev) {
                 autoAimActive = !autoAimActive;
             }
@@ -341,7 +341,7 @@ public class SilexTeleop extends LinearOpMode {
             // Ajuste manual fino
             boolean juanSubir = gamepad1.right_trigger > 0.1;
             boolean juanBajar = gamepad1.left_trigger > 0.1;
-            double velocidadJuan = 0.2;
+            double velocidadJuan = 0.1;
 
             if (juanSubir) {
                 juanActualPos += velocidadJuan;
@@ -350,8 +350,12 @@ public class SilexTeleop extends LinearOpMode {
             }
 
             // Posición fija al pulsar B
-            if (gamepad1.dpad_left) {
-                juanActualPos = 0.40;
+            if (gamepad1.y ) {
+                juanActualPos = 0.60;
+            }
+
+            if (gamepad1.left_bumper ) {
+                juanActualPos = 0.3;
             }
 
             // LÍMITES DE SEGURIDAD PARA JUAN

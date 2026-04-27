@@ -56,14 +56,14 @@ public class Silex extends OpMode {
     private int pathState;
 
     private final Pose startPose = new Pose(28.5, 128, Math.toRadians(180));
-    private final Pose scorePose = new Pose(70, 85, Math.toRadians(135));
-    private final Pose pickup1Pose = new Pose(22, 84, Math.toRadians(197));
+    private final Pose scorePose = new Pose(58, 100, Math.toRadians(145));
+    private final Pose pickup1Pose = new Pose(22, 80, Math.toRadians(197));
     private final Pose pickup2Pose = new Pose(22, 60, Math.toRadians(180));
     private final Pose pickup3Pose = new Pose(22, 36, Math.toRadians(185));
     private final Pose out = new Pose(50, 60, Math.toRadians(135));
 
-    private final Pose controlPose1 = new Pose(77, 57, Math.toRadians(180));
-    private final Pose controlPose2 = new Pose(85, 35, Math.toRadians(185));
+    private final Pose controlPose1 = new Pose(77, 80, Math.toRadians(180));
+    private final Pose controlPose2 = new Pose(55, 50, Math.toRadians(185));
 
     private Path scorePreload;
     private PathChain grabPickup1, scorePickup1, grabPickup2, scorePickup2, grabPickup3, scorePickup3, leaveauto;
